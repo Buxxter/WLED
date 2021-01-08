@@ -51,7 +51,11 @@ void handleButton()
   else if (!isButtonPressed() && buttonPressedBefore) //released
   {
     long dur = millis() - buttonPressedTime;
-    if (dur < 50) {buttonPressedBefore = false; return;} //too short "press", debounce
+    #ifdef BTN_DEBOUNCE_MS
+      if (dur < BTN_DEBOUNCE_MS) {buttonPressedBefore = false; return;} //too short "press", debounce
+    #else
+      if (dur < 50) {buttonPressedBefore = false; return;} //too short "press", debounce
+    #endif
     bool doublePress = buttonWaitTime;
     buttonWaitTime = 0;
 

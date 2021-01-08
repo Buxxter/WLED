@@ -11,7 +11,7 @@
 #define VERSION 2012130
 
 //uncomment this if you have a "my_config.h" file you'd like to use
-//#define WLED_USE_MY_CONFIG
+#define WLED_USE_MY_CONFIG
 
 // ESP8266-01 (blue) got too little storage space to work with WLED. 0.10.2 is the last release supporting this unit.
 
@@ -210,7 +210,7 @@ WLED_GLOBAL bool useRGBW      _INIT(false);       // SK6812 strips can contain a
 WLED_GLOBAL bool turnOnAtBoot _INIT(true);        // turn on LEDs at power-up
 WLED_GLOBAL byte bootPreset   _INIT(0);           // save preset to load after power-up
 
-WLED_GLOBAL byte col[]    _INIT_N(({ 255, 160, 0, 0 }));  // current RGB(W) primary color. col[] should be updated if you want to change the color.
+WLED_GLOBAL byte col[]    _INIT_N(({ 255, 0, 0, 0 }));  // current RGB(W) primary color. col[] should be updated if you want to change the color.
 WLED_GLOBAL byte colSec[] _INIT_N(({ 0, 0, 0, 0 }));      // current RGB(W) secondary color
 WLED_GLOBAL byte briS     _INIT(128);                     // default brightness
 
